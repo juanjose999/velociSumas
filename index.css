@@ -7,19 +7,21 @@
 body {
     display: flex;
     justify-content: center;
-    align-items: end;
     width: 100%;
-    height: 100vh;
-    margin: 0;
+    height: auto;
     font-size: 2.8em;
     font-weight: 600;
-    background-color: rgb(30, 30, 35);
+    background-color: rgb(33, 34, 31);
     color: white;
+}
+main {
+    width: 100%;
+    height: 100vh;
 }
 .screen {
     display: flex;
-    margin-top: 10em;
-    height: 100vh;
+    width: 100%;
+    height: 89.8vh;
     justify-content: center;
     align-items: start;
     overflow: hidden;
@@ -27,7 +29,7 @@ body {
 .entrada {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     background-color: rgb(50, 50, 57);
     width: 100%;
     padding: 0.4em;
@@ -36,7 +38,7 @@ body {
     box-sizing: none;
 }
 input {
-    background-color: rgb(233, 228, 228);
+    background-color: rgb(224, 217, 217);
     border-radius: 0.6em;
     width: 18em;
     height: 3em;
@@ -49,7 +51,7 @@ button:hover {
 #enviar {
     width: 3em;
     height: 3em;
-    background-color: rgb(9, 219, 61);
+    background-color: rgb(8, 231, 64);
     border: none;
     border-radius: 100%;
 }
