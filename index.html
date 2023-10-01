@@ -9,14 +9,20 @@
 <body>
 
     <main>
-        <section class="screen">
-            <div class="caja1">
-                <span id="num1"></span>
-                <span id="num2"></span>
-                <span id="num3"></span>
-                <span id="num4"></span>
-            </div>
-        </section>
+        <div class="containerPuntosYSuma">
+            <section class="contador">
+                <span>Puntos: </span>
+                <span id="contador"> 0</span>
+            </section>
+            <section class="screen">
+                <div class="caja1">
+                    <span id="num1"></span>
+                    <span id="num2"></span>
+                    <span id="num3"></span>
+                    <span id="num4"></span>
+                </div>
+            </section>
+         </div>
         <section class="entrada">
             <input type="number">
             <button id="enviar" onclick="verificar">
