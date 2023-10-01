@@ -6,6 +6,7 @@ let num4 = document.getElementById('num4');
 let inputUser = document.querySelector('input');
 let btn = document.getElementById('enviar');
 let contadorElement = document.getElementById('contador');
+let btnClose = document.getElementById('close')
 
 // inicializo arrayAleatorio y el total
 let arrayAleatorio;
@@ -61,4 +62,8 @@ function verificar() {
 function actualizarContador(){
     contador++;
     contadorElement.textContent = contador.toString();
+}
+btnClose.addEventListener('click',cerrar);
+function cerrar(){
+    alert(`Terminaste el juego \ncon un total de: ${contador} puntos`)
 }
