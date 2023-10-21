@@ -11,6 +11,7 @@ const body = document.body;
 let intro = document.getElementById('modalPortada');
 let btnIntro = document.getElementById('btnIntro');
 let containerJuego = document.getElementById('container-juego');
+let sampleCorrecto = document.ge
 
 containerJuego.style.display = 'none';
 intro.style.display = 'block';
@@ -65,21 +66,33 @@ function verificar() {
     if (inputUser.value.trim().length === 0 || inputUser.value.trim().length < 2) {
         alert("Valores incorrectos");
         cambiarColor("red");
-        return; // Sale de la función si los valores son incorrectos
-        
+        return; // Sale de la función si los valores son incorrectos   
     }
     if (valorUsuario === sumarNumerosAleatorios()) {
+        sonidoAsierto()
         alert("Suma correcta");
         generarArrayAleatorio(4);
         actualizarNumeros();
         actualizarContador();
         cambiarColor("green");
         inputUser.value = "";
+
     } else {
+        sonidoDesasierto()
         alert("Suma incorrecta, vuelve a intentarlo");
         cambiarColor("red")
     }
 }
+function sonidoAsierto(){
+    var sonido = document.getElementById('correcto');
+    sonido.play();
+}
+
+function sonidoDesasierto(){
+    var desacierto = document.getElementById('incorrecto')
+    desacierto.play();
+}
+
 function cambiarColor(color) {
     body.style.background = color;
     // Revertir el color después de 3 segundos

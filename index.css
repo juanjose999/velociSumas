@@ -58,13 +58,12 @@ input {
     grid-column: 1/4;
 }
 button:hover {
-    background-color: rgb(227, 250, 242);
     cursor: pointer;
 }
 #enviar {
     width: 3em;
     height: 3em;
-    background-color: rgb(8, 231, 64);
+    background-color: rgb(6, 197, 54);
     border: none;
     border-radius: 30%;
     display: flex;
@@ -92,20 +91,18 @@ button img:hover {
 }
 .caja1 {
     display: flex;
+    gap: -2em;
     flex-direction: column;
     align-items: flex-end;
-    margin-top: 10em;
-    animation: abajo 28s ease-in-out infinite;
+    animation: abajo 28s ease-out infinite;
 }
-.caja1:nth-child(4){
-    border: solid red 10px;
-}
+
 @keyframes abajo {
     0%{
       transform: translateY(-280%);
     }
     100%{
-      transform: translateY(100vh);
+        transform: translateY(90vh);
     } 
 }
 @media screen and (min-width: 768px) {
@@ -155,7 +152,7 @@ button img:hover {
     background-color: rgb(233, 233, 233);
 }
 #linea {
-    width: 2em;
+    width: 2.6em;
     height: 0.2em;
     border-radius: 1em;
     background: white;
