@@ -8,6 +8,20 @@ let btn = document.getElementById('enviar');
 let contadorElement = document.getElementById('contador');
 let btnClose = document.getElementById('close');
 const body = document.body;
+let intro = document.getElementById('modalPortada');
+let btnIntro = document.getElementById('btnIntro');
+let containerJuego = document.getElementById('container-juego');
+
+containerJuego.style.display = 'none';
+intro.style.display = 'block';
+btnIntro.style.display = 'block';
+
+btnIntro.addEventListener('click', ocultarIntro);
+function ocultarIntro(){
+    intro.style.display = 'none'
+    containerJuego.style.display = 'block';
+}
+
 
 // inicializo arrayAleatorio y el total
 let arrayAleatorio;

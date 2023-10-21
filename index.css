@@ -33,21 +33,29 @@ main {
 .entrada {
     display: flex;
     justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-content: center;
     background-color: rgb(50, 50, 57);
     width: 100%;
-    padding: 0.4em;
-    gap: 0.4em;
     border: none;
     box-sizing: none;
     overflow: hidden;
-    align-items: flex-end;
+    height: 10.8%;
+}
+.gridInput {
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    gap: 0.2em;
+    grid-template-columns: 1fr 1fr 1fr 0.5fr;
 }
 input {
     background-color: rgb(224, 217, 217);
     border-radius: 0.6em;
-    width: 18em;
+    width: 20em;
     height: 3em;
-    padding: 1em;
+    grid-column: 1/4;
 }
 button:hover {
     background-color: rgb(227, 250, 242);
@@ -58,7 +66,10 @@ button:hover {
     height: 3em;
     background-color: rgb(8, 231, 64);
     border: none;
-    border-radius: 100%;
+    border-radius: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 button{
     display: flex;
@@ -69,8 +80,8 @@ button:hover{
     transform: scale(1.3);
 }
 button img {
-    width: 2em;
-    filter: invert(0%);
+    width: 1.6em;
+    filter: brightness(0) invert(1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,14 +97,16 @@ button img:hover {
     margin-top: 10em;
     animation: abajo 28s ease-in-out infinite;
 }
+.caja1:nth-child(4){
+    border: solid red 10px;
+}
 @keyframes abajo {
     0%{
       transform: translateY(-280%);
     }
     100%{
       transform: translateY(100vh);
-    }
-    
+    } 
 }
 @media screen and (min-width: 768px) {
     /* Estilos para pantallas más grandes (ajusta según sea necesario) */
@@ -140,4 +153,81 @@ button img:hover {
     width: 2px;
     height: 20px;
     background-color: rgb(233, 233, 233);
+}
+#linea {
+    width: 2em;
+    height: 0.2em;
+    border-radius: 1em;
+    background: white;
+}
+.modalIntroImg {
+    display: inline;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modalIntroImg figure img {
+    width: 9em;
+    height: 19em;
+}
+.modalIntroImg button {
+    position: absolute;
+    margin-top: 6em;
+    border: none;
+  cursor: pointer;
+  background: linear-gradient(to right, #3498db, #2ecc71); /* Gradient de azul a verde */
+  background-size: 200% 100%;
+  animation: gradientShift 3s linear infinite;
+    padding: 1em;
+    color: white;
+    width: 18em;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 0.2em;
+    display: flex;
+    margin-left: -2em;
+}
+@keyframes gradientShift {
+    0% {
+      background-position: 100% 0;
+    }
+    20%{
+        transform: rotate(8deg);
+    }
+    40%{
+        transform: rotate(0deg);
+    }
+    60%{
+        transform: rotate(0deg);
+    }
+    80%{
+        transform: rotate(-8deg);
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+  
+.inputUser {
+    display: flex;
+}
+.contenidoIntro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenidoIntro figure img {
+    animation: escala 3s ease-in-out infinite;
+}
+@keyframes escala {
+    0%{
+       transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+        
+    }100%{
+         transform: scale(1);
+    }
+    
 }
