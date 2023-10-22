@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <title>Sumas rapidas</title>
-    <audio id="correcto" src="/assets/correct-choice-43861.mp3"></audio>
-    <audio id="incorrecto" src="/assets/incorrecto.mp3"></audio>
+    <audio id="correcto" src="assets/correct-choice-43861.mp3"></audio>
+    <audio id="incorrecto" src="assets/incorrecto.mp3"></audio>
     
 </head>
 
@@ -24,29 +24,35 @@
                 </button>
             </div>
         </section>
-        <section id="container-juego">
-            <div class="containerPuntosYSuma">
-                <section class="contador">
-                    <span>Puntos: </span>
-                    <span id="contador"> 0</span>
-                </section>
-                <button id="close">
-                    <span class="linea1"></span>
-                    <span class="linea2"></span>
-                </button>
-                <section class="screen">
-                    <div class="caja1">
-                        <span id="num1"></span>
-                        <span id="num2"></span>
-                        <span id="num3"></span>
-                        <div class="mas">
-                            <span>+</span>
-                            <span id="num4"></span>
+        <div class="conten">
+            <section id="container-juego">
+                <section class="containerPuntosYSuma">
+                    <section class="info">
+                        <section class="contador">
+                            <section>
+                                <span>Puntos: </span>
+                                <span id="contador"> 0</span>
+                            </section>
+                            <button id="close">
+                                <span class="linea1"></span>
+                                <span class="linea2"></span>
+                            </button>
+                        </section>
+                    </section>
+                    <section class="screen">
+                        <div class="caja1">
+                            <span id="num1"></span>
+                            <span id="num2"></span>
+                            <span id="num3"></span>
+                            <div class="mas">
+                                <span>+</span>
+                                <span id="num4"></span>
+                            </div>
+                            <span id="linea"></span>
                         </div>
-                        <span id="linea"></span>
-                    </div>
+                    </section>
                 </section>
-            </div>
+            </section>
             <section class="entrada">
                 <div class="gridInput">
                     <input type="number">
@@ -55,7 +61,7 @@
                     </button>
                 </div>
             </section>
-        </section>
+        </div>
     </main>
 
     <script src="app.js"></script>

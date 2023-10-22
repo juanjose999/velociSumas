@@ -104,24 +104,16 @@ function actualizarContador() {
     contador++;
     contadorElement.textContent = contador.toString();
 }
+
 btnClose.addEventListener('click', cerrar);
-function cerrar() {
-    alert(`Terminaste el juego \ncon un total de: ${contador} puntos`);
+function cerrar(){
+    alert(`Terminaste el Juego \ncon un total de: ${contador} puntos`);
     document.body.classList.add('desenfocado');
 
     // Quitar la clase después de un tiempo para revertir el desenfoque
     setTimeout(function () {
         document.body.classList.remove('desenfocado');
     }, 300);
+    console.log("estas cerrando");
+    console.log("cerrando")
 }
-
-// Agregar un listener para el evento click
-btnClose.addEventListener('click', function () {
-    // Agregar la clase de escala al hacer clic
-    btnClose.classList.add('escalar');
-
-    // Quitar la clase después de un tiempo para permitir que la animación se repita
-    setTimeout(function () {
-        btnClose.classList.remove('escalar');
-    }, 300);
-});
