@@ -27,11 +27,12 @@ function ocultarIntro(){
 // inicializo arrayAleatorio y el total
 let arrayAleatorio;
 let total;
+let incremento = 100;
 // funcion que genera los valoren del array
 function generarArrayAleatorio(cantidad) {
     arrayAleatorio = [];
     for (let i = 0; i < cantidad; i++) {
-        let numeroAleatorio = Math.floor(Math.random() * 101) + 100;
+        let numeroAleatorio = Math.floor(Math.random() * 101) + incremento;
         arrayAleatorio.push(numeroAleatorio);
     }
 }
@@ -57,7 +58,6 @@ generarArrayAleatorio(4);
 actualizarNumeros();
 
 
-
 // le digo al btn cuando escuche el click llame a la funcion verificar
 btn.addEventListener('click', verificar);
 // funcion que compara el valor que ingreso el usuario con el valor la funcion suma
@@ -71,11 +71,13 @@ function verificar() {
     if (valorUsuario === sumarNumerosAleatorios()) {
         sonidoAsierto()
         alert("Suma correcta");
+        cambiarColor("green");
+        incremento += 100;
         generarArrayAleatorio(4);
         actualizarNumeros();
         actualizarContador();
-        cambiarColor("green");
         inputUser.value = "";
+        moverCajaAleatoriamente()
 
     } else {
         sonidoDesasierto()
@@ -83,6 +85,7 @@ function verificar() {
         cambiarColor("red")
     }
 }
+//funcion play sound
 function sonidoAsierto(){
     var sonido = document.getElementById('correcto');
     sonido.play();
@@ -104,7 +107,7 @@ function actualizarContador() {
     contador++;
     contadorElement.textContent = contador.toString();
 }
-
+//funcion cerrar
 btnClose.addEventListener('click', cerrar);
 function cerrar(){
     alert(`Terminaste el Juego \ncon un total de: ${contador} puntos`);
@@ -116,4 +119,20 @@ function cerrar(){
     }, 300);
     console.log("estas cerrando");
     console.log("cerrando")
+}
+
+function moverCajaAleatoriamente() {
+    let caja = document.getElementById('caja');
+
+    // Obtenemos dimensiones de la ventana
+    let windowWidth = window.innerWidth;
+    let windowHeight = window.innerHeight;
+
+    // Calculamos nuevas posiciones aleatorias
+    let nuevaPosX = Math.random() * (windowWidth - caja.offsetWidth);
+    let nuevaPosY = Math.random() * (windowHeight - caja.offsetHeight);
+
+    // Aplicamos las nuevas posiciones
+    caja.style.left = nuevaPosX + 'px';
+    caja.style.top = nuevaPosY + 'px';
 }
