@@ -8,6 +8,7 @@
     <title>Sumas rapidas</title>
     <audio id="correcto" src="assets/correct-choice-43861.mp3"></audio>
     <audio id="incorrecto" src="assets/incorrecto.mp3"></audio>
+    <audio id="baseMusica" src="assets/lofi.mp3"></audio>
     
 </head>
 
@@ -53,14 +54,17 @@
                     </section>
                 </section>
             </section>
-            <section class="entrada">
-                <div class="gridInput">
-                    <input type="number">
-                    <button id="enviar" onclick="verificar" placeholder="123">
-                        <img src="assets/enviar-mensaje.png" alt="">
-                    </button>
-                </div>
-            </section>
+
+            <div id="inputUser">
+                <section class="entrada">
+                    <div class="gridInput">
+                        <input type="number">
+                        <button id="enviar" onclick="verificar" placeholder="123">
+                            <img src="assets/enviar-mensaje.png" alt="">
+                        </button>
+                    </div>
+                </section>
+            </div>
         </div>
     </main>
 

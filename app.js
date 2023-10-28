@@ -11,28 +11,49 @@ const body = document.body;
 let intro = document.getElementById('modalPortada');
 let btnIntro = document.getElementById('btnIntro');
 let containerJuego = document.getElementById('container-juego');
-let sampleCorrecto = document.ge
+let input = document.getElementById('inputUser');
+const miAudio = document.getElementById('baseMusica');
+const volumenAudio = 0.1;
 
+miAudio.volume = volumenAudio;
+
+miAudio.addEventListener('termino', function(){
+    miAudio.currentTime = 0;
+    miAudio.play();
+})
+
+btnIntro.addEventListener('click', reproducir);
+function reproducir(){
+    if(miAudio.paused){
+        miAudio.play();
+    console.log("estoy sonando")
+    }
+}
+
+input.style.display = 'none'
 containerJuego.style.display = 'none';
 intro.style.display = 'block';
 btnIntro.style.display = 'block';
 
 btnIntro.addEventListener('click', ocultarIntro);
+
 function ocultarIntro(){
     intro.style.display = 'none'
     containerJuego.style.display = 'block';
+    input.style.display = 'block'
+    reproducir();
 }
 
 
 // inicializo arrayAleatorio y el total
 let arrayAleatorio;
 let total;
-let incremento = 100;
+let incremento = 30;
 // funcion que genera los valoren del array
 function generarArrayAleatorio(cantidad) {
     arrayAleatorio = [];
     for (let i = 0; i < cantidad; i++) {
-        let numeroAleatorio = Math.floor(Math.random() * 101) + incremento;
+        let numeroAleatorio = Math.floor(Math.random() * 20) + incremento;
         arrayAleatorio.push(numeroAleatorio);
     }
 }
@@ -119,6 +140,11 @@ function cerrar(){
     }, 300);
     console.log("estas cerrando");
     console.log("cerrando")
+
+    setTimeout(function () {
+        console.log("Cerrando...");
+        location.reload();
+    }, 1000);
 }
 
 function moverCajaAleatoriamente() {
@@ -136,3 +162,12 @@ function moverCajaAleatoriamente() {
     caja.style.left = nuevaPosX + 'px';
     caja.style.top = nuevaPosY + 'px';
 }
+
+const caja1 = document.querySelector('.caja1');
+const duracionAnimacion = 36000; // Duración en milisegundos (28 segundos)
+const tiempoEspera = 10; 
+
+// Ajusta la velocidad de la animación
+caja1.style.animationDuration = duracionAnimacion + 'ms';
+caja1.style.animationDelay = tiempoEspera + 'ms';
+

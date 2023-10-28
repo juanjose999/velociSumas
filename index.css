@@ -64,6 +64,9 @@ input {
 button:hover {
     cursor: pointer;
 }
+#inputUser {
+    z-index: 100;
+}
 #enviar {
     width: 3em;
     height: 3em;
@@ -191,8 +194,8 @@ button img:hover {
     align-items: center;
 }
 .modalIntroImg figure img {
-    width: 9em;
-    height: 19em;
+    width: 7em;
+    height: 17em;
 }
 .modalIntroImg button {
     position: absolute;
@@ -239,6 +242,8 @@ button img:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100vh;
 }
 .contenidoIntro figure img {
     animation: escala 3s ease-in-out infinite;
@@ -253,5 +258,4 @@ button img:hover {
     }100%{
          transform: scale(1);
     }
-    
 }
